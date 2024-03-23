@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='product.css')}}"/>
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <a href="/productpage">Products</a>
+        <a href="/categories">Catergories</a>
+        <a href="/users">Users</a>
+        <div class="usertab">
+            <img src="https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg"
+            alt=""
+            width="24px"
+            height="24px">
+            <p>TestUser1</p>
+        </div>
+    </nav>
+
+    <main>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+            </tr>
+            {% for row in rows %}
+            <tr>
+                <td>{{row['ID']}}</td>
+                <td>{{row['Name']}}</td>
+                <td>Edit</td>
+                <td>Delete</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </main>
+</body>
+</html>
