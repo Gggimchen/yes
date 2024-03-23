@@ -19,6 +19,7 @@
             <p>TestUser1</p>
         </div>
     </nav>
+    <button style="font-size: 25px; background-color: aqua; border-radius: 5px; padding: 5px;">New</button>
 
     <main>
         <table>
@@ -35,7 +36,7 @@
                 <td>{{row['name']}}</td>
                 <td>{{row['price']}}</td>
                 <td>Edit</td>
-                <td>Delete</td>
+                <td><a href="{{url_for('deleteEntry', id =row['id'])}}">Delete</a></td>
             </tr>
             {% endfor %}
         </table>

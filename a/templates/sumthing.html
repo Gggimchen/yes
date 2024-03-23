@@ -13,12 +13,16 @@
     width="100%"
     height="100%">
     <div>
-        <h1>Sign In</h1>
-        <p>Username:</p>
-        <input placeholder="Username"/>
-        <p>Password:</p>
-        <input placeholder="Password" type="password"/>
-        <a href="/productpage">Sign In</a>
+        <form action="/" method="post">
+            <h1>Sign In</h1>
+            <p>Username:</p>
+            <input placeholder="Username" id="Username" name="username" required/>
+            <p>Password:</p>
+            <input style="margin-bottom: 20px;" placeholder="Password" type="password" id="password" name="password" required/>
+            <button type="submit">
+                <p>Sign In</p>
+            </button>
+        </form>
     </div>
     </body>
 </html>
