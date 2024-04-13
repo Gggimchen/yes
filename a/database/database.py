@@ -19,7 +19,7 @@ cursor.execute(query)
 query = 'CREATE TABLE IF NOT EXISTS categories(id INTEGER PRIMARY KEY NOT NULL, name TEXT NOT NULL)'
 cursor.execute(query)
 
-query = 'CREATE TABLE IF NOT EXISTS product(id INTEGER PRIMARY KEY NOT NULL, image TEXT NOT NULL, name TEXT NOT NULL, price NUMBER NOT NULL, categoryID INTERGER, FOREIGN KEY (categoryID) REFERENCES categories(ID))'
+query = 'CREATE TABLE IF NOT EXISTS product(id INTEGER PRIMARY KEY NOT NULL, name TEXT NOT NULL, price NUMBER NOT NULL, categoryID INTERGER, FOREIGN KEY (categoryID) REFERENCES categories(ID))'
 cursor.execute(query)
 
 query = 'INSERT INTO users VALUES (1, "TestUser", "123456"), (2, "tennis", "3423"), (3, "Football", "654321"), (4, "Jaden", "489382"), (5, "William", "538482")'

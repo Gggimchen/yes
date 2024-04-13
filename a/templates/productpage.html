@@ -19,23 +19,21 @@
             <p>TestUser1</p>
         </div>
     </nav>
-    <button style="font-size: 25px; background-color: aqua; border-radius: 5px; padding: 5px;">New</button>
+    <a href="{{url_for('AddProductPage')}}" style="font-size: 25px; background-color: aqua; border-radius: 5px; padding: 5px;">New</a>
 
     <main>
         <table>
             <tr>
                 <th>ID</th>
-                <th>Image</th>
                 <th>Product name</th>
                 <th>Price</th>
             </tr>
             {% for row in rows %}
             <tr>
                 <td>{{row['id']}}</td>
-                <td style="width:100px;"><img src="{{row['image']}}" alt=""></td>
                 <td>{{row['name']}}</td>
                 <td>{{row['price']}}</td>
-                <td>Edit</td>
+                <td><a href="{{url_for('EditProductPage', id =row['id'])}}">Edit</a></td>
                 <td><a href="{{url_for('deleteEntry', id =row['id'])}}">Delete</a></td>
             </tr>
             {% endfor %}

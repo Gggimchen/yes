@@ -19,6 +19,7 @@
             <p>TestUser1</p>
         </div>
     </nav>
+    <a href="{{url_for('AddCategoryPage')}}" style="font-size: 25px; background-color: aqua; border-radius: 5px; padding: 5px;">New</a>
 
     <main>
         <table>
@@ -28,10 +29,10 @@
             </tr>
             {% for row in rows %}
             <tr>
-                <td>{{row['ID']}}</td>
-                <td>{{row['Name']}}</td>
-                <td>Edit</td>
-                <td>Delete</td>
+                <td>{{row['id']}}</td>
+                <td>{{row['name']}}</td>
+                <td><a href="{{url_for('EditCategoryPage', id =row['id'])}}">Edit</a></td>
+                <td><a href="{{url_for('deleteEntryCategory', id =row['id'])}}">Delete</a></td>
             </tr>
             {% endfor %}
         </table>

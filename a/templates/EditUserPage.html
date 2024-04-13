@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% if id%}
+    <form action="/users/edit/{{id}}" method="post">
+        <input placeholder="Usrname" name="username"/>
+        <input placeholder="Password" name="password"/>
+        <button type="submit">Edit</button>
+    </form>
+    {% else %}
+    <form action="/users/add" method="post">
+        <input placeholder="Username" name="username"/>
+        <input placeholder="Password" name="password"/>
+        <button type="submit">Add</button>
+    </form>
+    {% endif %}
+</body>
+</html>

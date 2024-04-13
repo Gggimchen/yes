@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% if id%}
+    <form action="/productpage/edit/{{id}}" method="post">
+        <input placeholder="Name" name="name"/>
+        <input placeholder="Category" name="categoryID"/>
+        <input placeholder="Price" name="price"/>
+        <button type="submit">Edit</button>
+    </form>
+    {% else %}
+    <form action="/productpage/add" method="post">
+        <input placeholder="Name" name="name"/>
+        <input placeholder="Category" name="categoryID"/>
+        <input placeholder="Price" name="price"/>
+        <button type="submit">Add</button>
+    </form>
+    {% endif %}
+</body>
+</html>

@@ -19,14 +19,24 @@
             <p>TestUser1</p>
         </div>
     </nav>
+    <a href="{{url_for('AddUserPage')}}" style="font-size: 25px; background-color: aqua; border-radius: 5px; padding: 5px;">New</a>
 
     <main>
         <table>
-            <th>ID</th>
-            <th>Profile Picture</th>
-            <th>Name</main></th>
-            <th>User</th>
-            <th>Password</th>
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Password</th>
+            </tr>
+            {% for row in rows %}
+            <tr>
+                <td>{{row['id']}}</td>
+                <td>{{row['username']}}</td>
+                <td>{{row['password']}}</td>
+                <td><a href="{{url_for('EditUserPage', id =row['id'])}}">Edit</a></td>
+                <td><a href="{{url_for('deleteEntryUser', id =row['id'])}}">Delete</a></td>
+            </tr>
+            {% endfor %}
         </table>
     </main>
 </body>
